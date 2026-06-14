@@ -1,0 +1,15 @@
+<h2>Community Groups</h2>
+
+<input [(ngModel)]="name" placeholder="Community Group name" />
+<br>
+<input [(ngModel)]="description" placeholder="Description" />
+<br>
+
+<button (click)="createCommunityGroup()">Create Group</button>
+
+<hr>
+
+<div *ngFor="let g of communityGroups">
+  <h3>{{ g.name }}</h3>
+  <p>{{ g.description }}</p>
+</div>

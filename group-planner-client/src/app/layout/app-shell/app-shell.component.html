@@ -1,0 +1,9 @@
+<nav *ngIf="isLoggedIn()">
+  <a routerLink="/communitygroups">Community Groups</a>
+  <a routerLink="/events">Events</a>
+  <button (click)="logout()">Logout</button>
+</nav>
+
+<hr>
+
+<router-outlet></router-outlet>
