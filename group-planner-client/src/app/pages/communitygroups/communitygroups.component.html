@@ -1,15 +1,41 @@
-<h2>Community Groups</h2>
+<div class="page">
 
-<input [(ngModel)]="name" placeholder="Community Group name" />
-<br>
-<input [(ngModel)]="description" placeholder="Description" />
-<br>
+  <!-- Header -->
+  <div class="header">
+    <h1>Community Groups</h1>
+    <p *ngIf="communityGroups.length === 0">
+      No groups yet — click + to create one
+    </p>
+  </div>
 
-<button (click)="createCommunityGroup()">Create Group</button>
+  <!-- Floating Add Button -->
+  <button class="fab" (click)="toggleForm()">+</button>
 
-<hr>
+  <div class="drawer" [class.open]="showForm">
 
-<div *ngFor="let g of communityGroups">
-  <h3>{{ g.name }}</h3>
-  <p>{{ g.description }}</p>
+  <div class="drawer-header">
+    <h2>Create Group</h2>
+    <button (click)="toggleForm()">✕</button>
+  </div>
+
+  <div class="drawer-body">
+    <input [(ngModel)]="name" placeholder="Group name" />
+    <textarea [(ngModel)]="description" placeholder="Description"></textarea>
+  </div>
+
+  <div class="drawer-footer">
+    <button type="button" class="primary" (click)="createCommunityGroup()">Create</button>
+    <button class="cancel" (click)="toggleForm()">Cancel</button>
+  </div>
+
+</div>
+
+  <!-- Group List -->
+  <div class="grid">
+    <div class="card" *ngFor="let g of communityGroups">
+      <h3>{{ g.name }}</h3>
+      <p>{{ g.description }}</p>
+    </div>
+  </div>
+
 </div>

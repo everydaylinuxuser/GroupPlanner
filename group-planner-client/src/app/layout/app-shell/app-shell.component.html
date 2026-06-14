@@ -1,9 +1,30 @@
-<nav *ngIf="isLoggedIn()">
-  <a routerLink="/communitygroups">Community Groups</a>
-  <a routerLink="/events">Events</a>
-  <button (click)="logout()">Logout</button>
-</nav>
+<div class="layout">
 
-<hr>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>GroupPlanner</h2>
 
-<router-outlet></router-outlet>
+    <nav>
+      <a routerLink="/communitygroups">Community Groups</a>
+      <a routerLink="/events">Events</a>
+    </nav>
+
+    <button (click)="logout()">Logout</button>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <h1>Dashboard</h1>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+
+  </div>
+
+</div>

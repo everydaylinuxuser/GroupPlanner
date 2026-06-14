@@ -14,7 +14,7 @@ export const routes: Routes = [
     component: AppShellComponent,
     children: [
       { path: 'communitygroups', component: CommunityGroupsComponent },
-      { path: '', redirectTo: 'groups', pathMatch: 'full' }
+      { path: '', redirectTo: 'communitygroups', pathMatch: 'full' }
     ]
   }
 ];

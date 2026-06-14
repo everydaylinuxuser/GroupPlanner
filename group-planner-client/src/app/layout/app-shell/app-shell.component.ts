@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
-  templateUrl: './app-shell.component.html'
+  templateUrl: './app-shell.component.html',
+  styleUrls: ['./app-shell.component.css']
 })
 export class AppShellComponent {
 
@@ -22,5 +23,13 @@ export class AppShellComponent {
   logout() {
     this.auth.logout();
     this.router.navigate(['/login']);
+  }
+
+  getUserEmail(): string | null {
+    const token = this.auth.getToken();
+    if (!token) return null;
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload.email;
   }
 }
