@@ -1,5 +1,5 @@
 using GroupPlanner.Api.Data;
-using GroupPlanner.Api.Models;
+using GroupPlanner.Api.Models.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

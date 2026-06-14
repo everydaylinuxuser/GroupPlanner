@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace GroupPlanner.Api.Models;
+namespace GroupPlanner.Api.Models.Entities;
 
 public class ApplicationUser : IdentityUser
 {
